@@ -1,9 +1,10 @@
-package com.example.marvelapp
+package com.example.marvelapp.activity
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.marvelapp.R
 
 
 class MainActivity : AppCompatActivity() {

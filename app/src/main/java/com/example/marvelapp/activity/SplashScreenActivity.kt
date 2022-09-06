@@ -1,29 +1,29 @@
-package com.example.marvelapp
+package com.example.marvelapp.activity
 
 import android.animation.Animator
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import androidx.activity.viewModels
-import androidx.databinding.DataBindingUtil
+import androidx.appcompat.app.AppCompatActivity
+import com.example.marvelapp.activity.MainActivity
 import com.example.marvelapp.databinding.SplashScreenBinding
-import com.example.marvelapp.mvvm.viewmodel.SplashScreenActivityViewModel
+import com.example.marvelapp.mvvm.viewmodel.SplashScreenViewModel
 
 class SplashScreenActivity : AppCompatActivity() {
     private lateinit var binding: SplashScreenBinding
-    private val viewModel: SplashScreenActivityViewModel by viewModels()
+    private val viewModel: SplashScreenViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = SplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
         viewModel.splashScreenState.observe({ lifecycle }, ::changingState)
-        setListener()
+        viewModel.startAnimation()
     }
 
-    private fun changingState(SplashScreenData: SplashScreenActivityViewModel.SplashScreenData) {
+    private fun changingState(SplashScreenData: SplashScreenViewModel.SplashScreenData) {
         when (SplashScreenData.state) {
-            SplashScreenActivityViewModel.SplashScreenState.DONE -> launchMainActivity()
+            SplashScreenViewModel.SplashScreenState.START -> setListener()
+            SplashScreenViewModel.SplashScreenState.DONE -> launchMainActivity()
         }
     }
 
@@ -32,8 +32,8 @@ class SplashScreenActivity : AppCompatActivity() {
         finish()
     }
 
-    private fun setListener(){
-        val animatorListener = object : Animator.AnimatorListener{
+    private fun setListener() {
+        val animatorListener = object : Animator.AnimatorListener {
             override fun onAnimationEnd(animation: Animator?) = viewModel.splashDone()
             override fun onAnimationStart(animation: Animator?) {}
             override fun onAnimationCancel(animation: Animator?) {}
@@ -41,10 +41,4 @@ class SplashScreenActivity : AppCompatActivity() {
         }
         binding.lottieSplashScreen.addAnimatorListener(animatorListener)
     }
-
-
-
 }
-
-
-

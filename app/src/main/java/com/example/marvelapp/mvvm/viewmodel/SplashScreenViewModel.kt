@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class SplashScreenActivityViewModel : ViewModel() {
+class SplashScreenViewModel : ViewModel() {
     private val mutableLiveData: MutableLiveData<SplashScreenData> = MutableLiveData()
     val splashScreenState: LiveData<SplashScreenData> get() = mutableLiveData
 
@@ -12,11 +12,16 @@ class SplashScreenActivityViewModel : ViewModel() {
         mutableLiveData.value = SplashScreenData(SplashScreenState.DONE)
     }
 
+    fun startAnimation() {
+        mutableLiveData.value = SplashScreenData(SplashScreenState.START)
+    }
+
     data class SplashScreenData(
         val state: SplashScreenState
     )
 
     enum class SplashScreenState {
-        DONE
+        START,
+        DONE,
     }
 }
