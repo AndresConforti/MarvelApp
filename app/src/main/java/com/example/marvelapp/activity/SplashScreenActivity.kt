@@ -4,7 +4,6 @@ import android.animation.Animator
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.example.marvelapp.activity.MainActivity
 import com.example.marvelapp.databinding.SplashScreenBinding
 import com.example.marvelapp.mvvm.viewmodel.SplashScreenViewModel
 
