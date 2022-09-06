@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="app_default_style">
+        <item name="android:textColor">@color/dark_red_text</item>
+        <item name="android:textSize">@dimen/default_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+</resources>
