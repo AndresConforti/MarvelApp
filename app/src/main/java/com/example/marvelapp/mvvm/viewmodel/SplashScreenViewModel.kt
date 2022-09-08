@@ -22,6 +22,6 @@ class SplashScreenViewModel : ViewModel() {
 
     enum class SplashScreenState {
         START,
-        DONE,
+        DONE
     }
 }
