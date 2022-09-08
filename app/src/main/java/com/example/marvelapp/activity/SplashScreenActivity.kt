@@ -2,14 +2,15 @@ package com.example.marvelapp.activity
 
 import android.animation.Animator
 import android.os.Bundle
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.marvelapp.databinding.SplashScreenBinding
 import com.example.marvelapp.mvvm.viewmodel.SplashScreenViewModel
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
 
-class SplashScreenActivity : AppCompatActivity() {
+class SplashScreenActivity : AppCompatActivity(), KoinComponent {
     private lateinit var binding: SplashScreenBinding
-    private val viewModel: SplashScreenViewModel by viewModels()
+    val viewModel: SplashScreenViewModel by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -2,5 +2,6 @@
     <string name="app_name">MarvelApp</string>
     <string name="main_activity_title">TITLE</string>
     <string name="main_activity_description">DESCRIPTION</string>
-    <string name="main_activity_button">BUTTON</string>
+    <string name="main_activity_button">GET CHARACTERS</string>
+    <string name="main_activity_get_error">ERROR FETCHING</string>
 </resources>

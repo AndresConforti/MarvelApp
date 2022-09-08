@@ -1,4 +1,4 @@
-package com.example.marvelapp
+package com.example.marvelapp.viewmodel
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.marvelapp.mvvm.viewmodel.SplashScreenViewModel
