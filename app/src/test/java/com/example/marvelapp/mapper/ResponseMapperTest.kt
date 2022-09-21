@@ -14,7 +14,7 @@ import org.junit.runner.RunWith
 import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
-class MapperTest {
+class ResponseMapperTest {
     private lateinit var resultResponse: ResultResponse
     private lateinit var dataResponse: DataResponse
 
@@ -23,17 +23,13 @@ class MapperTest {
 
     @Before
     fun init() {
-        resultResponse = ResultResponse(
-            mutableListOf(
-                CharacterResponse(ID, NAME, DESCRIPTION)
-            )
-        )
+        resultResponse = ResultResponse(mutableListOf(CharacterResponse(ID, NAME, DESCRIPTION)))
         dataResponse = DataResponse(resultResponse)
     }
 
     @Test
     fun `transforming data response to character list`() {
-        val response = dataResponse.transformToList()
+        dataResponse.transformToList()
 
         assertEquals(ID, resultResponse.characters[0].id)
         assertEquals(NAME, resultResponse.characters[0].name)

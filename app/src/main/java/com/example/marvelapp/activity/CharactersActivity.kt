@@ -3,6 +3,7 @@ package com.example.marvelapp.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.marvelapp.R
@@ -28,7 +29,7 @@ class CharactersActivity : AppCompatActivity(), KoinComponent {
         when (CharacterData.characterState) {
             CharactersViewModel.CharactersState.LOADING -> displayLoader()
             CharactersViewModel.CharactersState.SHOW_CHARACTERS -> displayCharacters(CharacterData.characterInformation)
-            CharactersViewModel.CharactersState.CHARACTERS_NOT_FOUND -> displayError(R.string.main_activity_get_error)
+            CharactersViewModel.CharactersState.CHARACTERS_NOT_FOUND -> displayError(R.string.characters_activity_get_error)
         }
     }
 
@@ -38,6 +39,7 @@ class CharactersActivity : AppCompatActivity(), KoinComponent {
 
     private fun displayCharacters(charactersList: List<Character>) {
         binding.charactersActivityLoader.visibility = View.GONE
+        binding.charactersActivityData.movementMethod = ScrollingMovementMethod()
         binding.charactersActivityData.text = charactersList.toString()
     }
 
