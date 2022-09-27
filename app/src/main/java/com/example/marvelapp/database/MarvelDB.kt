@@ -6,5 +6,5 @@ import com.example.marvelapp.database.entity.CharacterEntity
 
 @Database(entities = [CharacterEntity::class], version = 1)
 abstract class MarvelDB : RoomDatabase() {
-    abstract fun marvelDAO() : MarvelDao
+    abstract fun marvelDAO(): MarvelDao
 }

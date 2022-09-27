@@ -20,7 +20,7 @@ class CharacterMapperTest {
 
     @Before
     fun init() {
-        character = Character(ID, NAME, DESCRIPTION)
+        character = Character(ID, NAME, DESCRIPTION, IMG)
     }
 
     @Test
@@ -30,11 +30,13 @@ class CharacterMapperTest {
         Assert.assertEquals(ID, character.id)
         Assert.assertEquals(NAME, character.name)
         Assert.assertEquals(DESCRIPTION, character.description)
+        Assert.assertEquals(IMG, character.img)
     }
 
     companion object {
         const val ID = "616"
         const val NAME = "Spider-Man"
         const val DESCRIPTION = "With great power there must also come great responsibility."
+        const val IMG = "http://terrigen-cdn-dev.marvel.com/content/prod/1x/203ham_com_crd_01.jpg"
     }
 }

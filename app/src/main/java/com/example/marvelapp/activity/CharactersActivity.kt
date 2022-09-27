@@ -3,10 +3,10 @@ package com.example.marvelapp.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.text.method.ScrollingMovementMethod
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.marvelapp.R
+import com.example.marvelapp.adapter.CharacterAdapter
 import com.example.marvelapp.databinding.ActivityCharactersBinding
 import com.example.marvelapp.entity.Character
 import com.example.marvelapp.mvvm.viewmodel.CharactersViewModel
@@ -38,14 +38,14 @@ class CharactersActivity : AppCompatActivity(), KoinComponent {
     }
 
     private fun displayCharacters(charactersList: List<Character>) {
+        binding.charactersActivityTitle.visibility = View.VISIBLE
         binding.charactersActivityLoader.visibility = View.GONE
-        binding.charactersActivityData.movementMethod = ScrollingMovementMethod()
-        binding.charactersActivityData.text = charactersList.toString()
+        binding.charactersActivityRecyclerview.adapter = CharacterAdapter(charactersList)
     }
 
     private fun displayError(stringId: Int) {
         binding.charactersActivityLoader.visibility = View.GONE
-        binding.charactersActivityData.text = getString(stringId)
+        binding.charactersActivityError.text = getString(stringId)
     }
 
     companion object {

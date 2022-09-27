@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <integer name="ems_value">5</integer>
+    <integer name="default_lines">2</integer>
+    <integer name="cardview_gradient_angle">180</integer>
 </resources>
