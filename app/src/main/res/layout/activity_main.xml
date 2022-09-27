@@ -10,6 +10,7 @@
     <TextView
         android:id="@+id/main_activity_title"
         style="@style/app_default_style"
+        android:textSize="@dimen/title_text_size"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/main_activity_title"
@@ -23,7 +24,9 @@
         style="@style/app_default_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="@dimen/description_text_size"
         android:text="@string/main_activity_description"
+        android:maxWidth="@dimen/description_max_width"
         app:layout_constraintBottom_toTopOf="@id/main_activity_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

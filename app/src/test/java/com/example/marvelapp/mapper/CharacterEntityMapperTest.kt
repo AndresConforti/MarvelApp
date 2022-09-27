@@ -22,8 +22,8 @@ class CharacterEntityMapperTest {
 
     @Before
     fun init() {
-        characterEntity = CharacterEntity(ID, NAME, DESCRIPTION)
-        characterEntityList = mutableListOf(CharacterEntity(ID, NAME, DESCRIPTION))
+        characterEntity = CharacterEntity(ID, NAME, DESCRIPTION, IMG)
+        characterEntityList = mutableListOf(CharacterEntity(ID, NAME, DESCRIPTION, IMG))
     }
 
     @Test
@@ -33,6 +33,7 @@ class CharacterEntityMapperTest {
         assertEquals(ID, dbListToCharacterList[0].id)
         assertEquals(NAME, dbListToCharacterList[0].name)
         assertEquals(DESCRIPTION, dbListToCharacterList[0].description)
+        assertEquals(IMG, dbListToCharacterList[0].img)
     }
 
     @Test
@@ -42,11 +43,13 @@ class CharacterEntityMapperTest {
         assertEquals(ID, dbToCharacter.id)
         assertEquals(NAME, dbToCharacter.name)
         assertEquals(DESCRIPTION, dbToCharacter.description)
+        assertEquals(IMG, dbToCharacter.img)
     }
 
     companion object {
         const val ID = "616"
         const val NAME = "Spider-Man"
         const val DESCRIPTION = "With great power there must also come great responsibility."
+        const val IMG = "http://terrigen-cdn-dev.marvel.com/content/prod/1x/203ham_com_crd_01.jpg"
     }
 }
