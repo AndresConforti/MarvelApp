@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.marvelapp.entity.Character
 import com.example.marvelapp.mvvm.model.CharactersModel
+import com.example.marvelapp.util.Constants.EMPTY
 import com.example.marvelapp.util.Result
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -38,14 +39,23 @@ class CharactersViewModel(private val model: CharactersModel) : ViewModel() {
         }
     }
 
+    fun showFragment(id: String) {
+        _characterState.value = CharactersData(
+            characterId = id,
+            characterState = CharactersState.DISPLAY_FRAGMENT
+        )
+    }
+
     data class CharactersData(
         val characterState: CharactersState,
-        val characterInformation: List<Character> = emptyList()
+        val characterInformation: List<Character> = emptyList(),
+        val characterId: String = EMPTY
     )
 
     enum class CharactersState {
         LOADING,
         SHOW_CHARACTERS,
-        CHARACTERS_NOT_FOUND
+        CHARACTERS_NOT_FOUND,
+        DISPLAY_FRAGMENT
     }
 }

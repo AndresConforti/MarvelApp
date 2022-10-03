@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/cardview"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginVertical="@dimen/cardview_size"
-    android:layout_marginEnd="@dimen/cardview_size"
-    android:background="@drawable/card">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/cardview_image_border"
+    android:minWidth="@dimen/fragment_image_width"
+    android:background="@drawable/fragment"
+    android:id="@+id/fragment">
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/cardview_image"
+        android:id="@+id/fragment_img"
         android:layout_width="@dimen/cardview_image_width"
         android:layout_height="@dimen/cardview_image_height"
         android:layout_marginTop="@dimen/cardview_size"
-        app:layout_constraintBottom_toTopOf="@id/cardview_name"
+        app:layout_constraintBottom_toTopOf="@id/fragment_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,13 +24,25 @@
         android:background="@color/black"/>
 
     <TextView
-        android:id="@+id/cardview_name"
         style="@style/cardview_text_style"
+        android:id="@+id/fragment_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/fragment_name"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cardview_image" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_img"
+        app:layout_constraintBottom_toTopOf="@id/fragment_description"/>
+
+    <TextView
+        style="@style/fragment_description_style"
+        android:id="@+id/fragment_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/fragment_no_description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_name"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

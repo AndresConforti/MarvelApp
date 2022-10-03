@@ -34,7 +34,7 @@ class CharacterMapperTest {
     }
 
     companion object {
-        const val ID = "616"
+        const val ID = "1011347"
         const val NAME = "Spider-Man"
         const val DESCRIPTION = "With great power there must also come great responsibility."
         const val IMG = "http://terrigen-cdn-dev.marvel.com/content/prod/1x/203ham_com_crd_01.jpg"
