@@ -9,7 +9,6 @@ object DBModule {
 
     val dbModule = module {
         single { Room.databaseBuilder(get(), MarvelDB::class.java, DB).build() }
-
         single { get<MarvelDB>().marvelDAO() }
     }
 }

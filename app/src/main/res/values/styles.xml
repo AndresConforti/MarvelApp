@@ -9,10 +9,28 @@
     <style name="cardview_text_style">
         <item name="android:textColor">@color/white</item>
         <item name="android:gravity">center</item>
-        <item name="android:layout_margin">@dimen/cardview_size</item>
+        <item name="android:layout_marginEnd">@dimen/cardview_size</item>
+        <item name="android:layout_marginBottom">@dimen/cardview_stroke_size</item>
+        <item name="android:layout_marginTop">@dimen/cardview_vertical_padding</item>
+        <item name="android:layout_marginStart">@dimen/cardview_vertical_padding</item>
         <item name="android:textSize">@dimen/cardview_text_size</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:lines">@integer/default_lines</item>
+    </style>
+    <style name="fragment_description_style">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginBottom">@dimen/cardview_horizontal_padding</item>
+        <item name="android:layout_marginStart">@dimen/cardview_horizontal_padding</item>
+        <item name="android:layout_marginEnd">@dimen/cardview_horizontal_padding</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:lines">@integer/fragment_description_lines</item>
+    </style>
+    <style name="image_style">
+        <item name="cornerSizeTopLeft">@dimen/image_corner_size</item>
+        <item name="cornerSizeTopRight">@dimen/image_corner_size</item>
+        <item name="strokeColor">@color/cardview_stroke_color</item>
+        <item name="strokeWidth">@dimen/cardview_stroke_size</item>
     </style>
 </resources>

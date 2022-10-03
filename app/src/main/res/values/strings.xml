@@ -4,6 +4,8 @@
     <string name="main_activity_description">PRESS THE BUTTON TO GET A LIST WITH 20 MARVEL CHARACTERS ALPHABETICALLY ORDERED.</string>
     <string name="main_activity_button">PRESS ME</string>
     <string name="characters_activity_get_error">ERROR - CANT FETCH DATA</string>
+    <string name="fragment_no_description">NO DESCRIPTION</string>
+    <string name="fragment_name">NAME</string>
     <string name="characters_activity_title">CHARACTERS LIST</string>
     <string name="cardview_image_description">DESCRIPTION</string>
 </resources>

@@ -11,6 +11,9 @@ interface MarvelDao {
     @Query("SELECT * FROM marvel_characters")
     fun getDBCharacters(): List<CharacterEntity>
 
+    @Query("SELECT * FROM marvel_characters WHERE id = :id")
+    fun getCharacter(id: String): List<CharacterEntity>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertCharacter(characterEntity: CharacterEntity)
 }

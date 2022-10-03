@@ -2,5 +2,7 @@
 <resources>
     <integer name="ems_value">5</integer>
     <integer name="default_lines">2</integer>
+    <integer name="fragment_description_lines">6</integer>
     <integer name="cardview_gradient_angle">180</integer>
+    <integer name="fragment_gradient_angle">90</integer>
 </resources>
