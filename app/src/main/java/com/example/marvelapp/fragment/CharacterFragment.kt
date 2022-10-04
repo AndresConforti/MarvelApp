@@ -6,11 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.bumptech.glide.Glide
+import com.example.domain.entity.Character
+import com.example.domain.utils.Constants.CHARACTER_ID
 import com.example.marvelapp.R
 import com.example.marvelapp.databinding.CharacterFragmentBinding
-import com.example.marvelapp.entity.Character
 import com.example.marvelapp.mvvm.viewmodel.FragmentViewModel
-import com.example.marvelapp.util.Constants
 import org.koin.android.ext.android.inject
 import org.koin.core.component.KoinComponent
 
@@ -22,7 +22,7 @@ class CharacterFragment : DialogFragment(), KoinComponent {
         super.onCreate(savedInstanceState)
         binding = CharacterFragmentBinding.inflate(layoutInflater)
         viewModel.fragmentState.observe({ lifecycle }, ::fragmentState)
-        viewModel.getCharacter(arguments?.getString(Constants.CHARACTER_ID).orEmpty())
+        viewModel.getCharacter(arguments?.getString(CHARACTER_ID).orEmpty())
         dialog?.window?.setBackgroundDrawableResource(android.R.color.transparent)
         binding.fragment.setOnClickListener { viewModel.onTouchListener() }
     }
@@ -62,9 +62,11 @@ class CharacterFragment : DialogFragment(), KoinComponent {
     }
 
     companion object {
+        const val TAG = "CHARACTER_FRAGMENT"
+
         fun newInstance(id: String): CharacterFragment {
             val args = Bundle()
-            args.putString(Constants.CHARACTER_ID, id)
+            args.putString(CHARACTER_ID, id)
             val fragment = CharacterFragment()
             fragment.arguments = args
             return fragment

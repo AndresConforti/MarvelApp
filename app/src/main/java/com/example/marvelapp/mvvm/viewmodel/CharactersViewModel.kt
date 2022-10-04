@@ -4,10 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.marvelapp.entity.Character
+import com.example.domain.entity.Character
 import com.example.marvelapp.mvvm.model.CharactersModel
-import com.example.marvelapp.util.Constants.EMPTY
-import com.example.marvelapp.util.Result
+import com.example.domain.utils.Result
+import com.example.domain.utils.Constants.EMPTY
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
