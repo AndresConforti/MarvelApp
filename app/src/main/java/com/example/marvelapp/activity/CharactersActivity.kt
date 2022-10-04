@@ -6,14 +6,13 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
+import com.example.domain.entity.Character
 import com.example.marvelapp.R
 import com.example.marvelapp.adapter.CharacterAdapter
 import com.example.marvelapp.adapter.CharacterListener
 import com.example.marvelapp.databinding.ActivityCharactersBinding
-import com.example.marvelapp.entity.Character
 import com.example.marvelapp.fragment.CharacterFragment
 import com.example.marvelapp.mvvm.viewmodel.CharactersViewModel
-import com.example.marvelapp.util.Constants
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
@@ -60,7 +59,7 @@ class CharactersActivity : AppCompatActivity(), KoinComponent, CharacterListener
     private fun displayFragment(id: String) {
         val characterFragment = CharacterFragment.newInstance(id)
         val fragmentManager: FragmentManager = supportFragmentManager
-        characterFragment.show(fragmentManager, Constants.TAG)
+        characterFragment.show(fragmentManager, CharacterFragment.TAG)
     }
 
     companion object {

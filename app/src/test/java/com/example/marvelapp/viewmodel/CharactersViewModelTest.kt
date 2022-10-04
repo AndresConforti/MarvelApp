@@ -1,13 +1,13 @@
 package com.example.marvelapp.viewmodel
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.example.marvelapp.entity.Character
+import com.example.domain.entity.Character
 import com.example.marvelapp.mvvm.model.CharactersModel
 import com.example.marvelapp.mvvm.viewmodel.CharactersViewModel
 import com.example.marvelapp.mvvm.viewmodel.CharactersViewModel.CharactersState
 import com.example.marvelapp.testObserver
-import com.example.marvelapp.usecase.GetCharactersUseCase
-import com.example.marvelapp.util.Result
+import com.example.domain.usecase.GetCharactersUseCase
+import com.example.domain.utils.Result
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
